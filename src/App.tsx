@@ -23,6 +23,10 @@ type Image = {
   likes: number;
 };
 
+interface UnsplashResponse {
+  results: Image[];
+}
+
 const API_URL = 'https://api.unsplash.com/search/photos';
 const API_KEY = 'QpRUaujVuECc3-OzieDpPpjpVf0UmvE9uvJXhM0qFpc';
 
@@ -42,7 +46,7 @@ const App: React.FC = () => {
       setError(null);
 
       try {
-        const response = await axios.get(API_URL, {
+        const response = await axios.get<UnsplashResponse>(API_URL, {
           params: {
             query,
             page,
