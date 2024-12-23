@@ -1,0 +1,46 @@
+.app {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBar {
+  margin-bottom: 20px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+}
+
+.loadMore {
+  background-color: #00bfff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.loadMore:hover {
+  background-color: #008cff;
+}
+
+.modalContent {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}

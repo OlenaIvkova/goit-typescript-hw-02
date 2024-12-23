@@ -24,11 +24,11 @@ type Image = {
 };
 
 const API_URL = 'https://api.unsplash.com/search/photos';
-const API_KEY = 'r-tYbkV6tgOq4IxCQoeuywAIQeXocFjGz3mDUQHE-QY';
+const API_KEY = 'QpRUaujVuECc3-OzieDpPpjpVf0UmvE9uvJXhM0qFpc';
 
 const App: React.FC = () => {
   const [query, setQuery] = useState<string>('');
-  const [images, setImages] = useState<Image[]>([]); // Типізація для масиву зображень
+  const [images, setImages] = useState<Image[]>([]); 
   const [page, setPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
