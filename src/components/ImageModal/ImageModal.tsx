@@ -18,7 +18,7 @@ interface ImageModalProps {
   onClose: () => void;
 }
 
-ReactModal.setAppElement('#root');
+ReactModal.setAppElement('#app');
 
 const ImageModal = ({ data, onClose }: ImageModalProps) => (
   <ReactModal isOpen={true} onRequestClose={onClose} className={styles.modal}>
