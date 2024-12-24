@@ -31,7 +31,7 @@ const API_URL = 'https://api.unsplash.com/search/photos';
 const API_KEY = 'QpRUaujVuECc3-OzieDpPpjpVf0UmvE9uvJXhM0qFpc';
 
 const App: React.FC = () => {
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState<string>(''); 
   const [images, setImages] = useState<Image[]>([]); 
   const [page, setPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -39,7 +39,10 @@ const App: React.FC = () => {
   const [modalData, setModalData] = useState<Image | null>(null);
 
   useEffect(() => {
-    if (!query) return;
+    if (!query.trim()) {
+      console.log('Query is empty. No request will be made.');
+      return;
+    }
 
     const fetchImages = async () => {
       setIsLoading(true);
@@ -48,7 +51,7 @@ const App: React.FC = () => {
       try {
         const response = await axios.get<UnsplashResponse>(API_URL, {
           params: {
-            query,
+            query, 
             page,
             per_page: 12,
           },
@@ -77,8 +80,8 @@ const App: React.FC = () => {
       toast.error('Please enter a search term.');
       return;
     }
-    setQuery(searchQuery);
-    setPage(1);
+    setQuery(searchQuery); 
+    setPage(1); 
   };
 
   const openModal = (image: Image): void => {
